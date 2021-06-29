@@ -1,4 +1,4 @@
-package com.leetcode.common;
+package com.learning.leetcode.common;
 
 public class ListNode {
     public int val;

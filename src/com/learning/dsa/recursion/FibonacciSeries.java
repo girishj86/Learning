@@ -1,3 +1,5 @@
+package com.learning.dsa.recursion;
+
 import java.util.Arrays;
 
 public class FibonacciSeries {
@@ -22,7 +24,6 @@ public class FibonacciSeries {
 
     public static int[] arrayFibonacciSeries(int n) {
         int[] series = new int[n];
-        int f, prev = 1, prev_prev = 0;
         series[0] = 1;
         series[1] = 1;
         for (int i = 2; i < n; i++) {

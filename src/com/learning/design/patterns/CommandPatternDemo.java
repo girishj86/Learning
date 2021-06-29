@@ -1,4 +1,4 @@
-package com.learning.designpatterns;
+package com.learning.design.patterns;
 
 public class CommandPatternDemo {
 

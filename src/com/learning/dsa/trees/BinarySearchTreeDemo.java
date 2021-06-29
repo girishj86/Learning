@@ -1,3 +1,5 @@
+package com.learning.dsa.trees;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,7 +19,6 @@ public class BinarySearchTreeDemo {
 
     private static void bfs(BSTNode root) {
         Queue<BSTNode> queue = new LinkedList<>();
-        int level = 0;
         queue.add(root);
         while (!queue.isEmpty()) {
             BSTNode temp = queue.poll();

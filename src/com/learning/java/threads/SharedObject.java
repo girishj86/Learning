@@ -1,4 +1,4 @@
-package com.learning.threads;
+package com.learning.java.threads;
 
 public class SharedObject {
 

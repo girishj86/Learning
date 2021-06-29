@@ -1,4 +1,4 @@
-package com.leetcode.easy.string;
+package com.learning.leetcode.easy.strings;
 
 public class LongestCommonPrefix {
 

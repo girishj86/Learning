@@ -1,4 +1,4 @@
-package com.leetcode.easy.string;
+package com.learning.leetcode.easy.strings;
 
 public class StrStr {
 
@@ -13,7 +13,6 @@ public class StrStr {
         if (needle.length() > haystack.length()){
             return -1;
         }
-        boolean flag = false;
         for (int i = 0; i < haystack.length(); i++) {
             int m = i;
             for (int j = 0; j < needle.length(); j++) {

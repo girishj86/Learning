@@ -1,4 +1,4 @@
-package com.learning.trees;
+package com.learning.dsa.trees;
 
 import java.util.LinkedList;
 import java.util.Objects;

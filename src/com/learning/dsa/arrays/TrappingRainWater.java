@@ -1,7 +1,6 @@
-import java.util.Arrays;
+package com.learning.dsa.arrays;
 
-import static java.lang.Integer.min;
-import static sun.swing.MenuItemLayoutHelper.max;
+import static java.lang.Integer.*;
 
 public class TrappingRainWater {
     public static void main(String[] args) {

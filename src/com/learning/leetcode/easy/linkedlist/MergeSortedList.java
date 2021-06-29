@@ -1,6 +1,6 @@
-package com.leetcode.easy.linkedlist;
+package com.learning.leetcode.easy.linkedlist;
 
-import com.leetcode.common.ListNode;
+import com.learning.leetcode.common.ListNode;
 
 public class MergeSortedList {
 

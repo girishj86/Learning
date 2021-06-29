@@ -1,4 +1,5 @@
-import java.util.Collections;
+package com.learning.dsa.maps;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -14,9 +15,6 @@ public class LRUCacheDemo {
     }
 
 }
-
-
-
 
 class LRUCache<K,V> {
     HashMap<K,Node> store = new HashMap<>();
@@ -46,7 +44,6 @@ class LRUCache<K,V> {
         if(tail == null){
             tail = node;
         }
-
 
     }
 

@@ -1,3 +1,5 @@
+package com.learning.dsa.arrays;
+
 public class SellAndBuyStock {
     public static void main(String[] args) {
         int[] stocks = {5, 1, 2, 3, 4};

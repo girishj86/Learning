@@ -1,4 +1,4 @@
-package com.learning.trees;
+package com.learning.dsa.trees;
 
 public class BinaryTreeDemo {
 

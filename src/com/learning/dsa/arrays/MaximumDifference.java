@@ -1,3 +1,5 @@
+package com.learning.dsa.arrays;
+
 import static java.lang.Integer.max;
 import static java.lang.Integer.min;
 

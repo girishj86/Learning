@@ -1,7 +1,6 @@
-package com.leetcode.medium.linkedlist;
+package com.learning.leetcode.medium.linkedlist;
 
-
-import com.leetcode.common.ListNode;
+import com.learning.leetcode.common.ListNode;
 
 public class AddTwoNumbers {
     public static void main(String[] args) {

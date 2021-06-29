@@ -1,4 +1,4 @@
-package com.learning.threads;
+package com.learning.java.threads;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
