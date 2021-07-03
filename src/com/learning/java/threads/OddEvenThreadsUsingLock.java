@@ -19,7 +19,7 @@ public class OddEvenThreadsUsingLock {
                 while (sharedObject.counter < sharedObject.max) {
                     try {
                         lock.lock();
-                        while (sharedObject.status.equals("Odd")) {
+                        while (sharedObject.state.equals("Odd")) {
                             try {
                                 evenCondition.await();
                             } catch (InterruptedException e) {
@@ -30,7 +30,7 @@ public class OddEvenThreadsUsingLock {
 							System.out.println(sharedObject.counter + " printed by " + Thread.currentThread().getName());
 						}
 						sharedObject.counter++;
-                        sharedObject.status = "Odd";
+                        sharedObject.state = "Odd";
                         oddCondition.signalAll();
                     } finally {
                         lock.unlock();
@@ -45,7 +45,7 @@ public class OddEvenThreadsUsingLock {
                 while (sharedObject.counter < sharedObject.max) {
                     try {
                         lock.lock();
-                        while (sharedObject.status.equals("Even")) {
+                        while (sharedObject.state.equals("Even")) {
                             try {
                                 oddCondition.await();
                             } catch (InterruptedException e) {
@@ -56,7 +56,7 @@ public class OddEvenThreadsUsingLock {
 							System.out.println(sharedObject.counter + " printed by " + Thread.currentThread().getName());
 						}
                         sharedObject.counter++;
-                        sharedObject.status = "Even";
+                        sharedObject.state = "Even";
                         evenCondition.signalAll();
                     } finally {
                         lock.unlock();

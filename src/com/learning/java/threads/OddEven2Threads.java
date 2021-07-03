@@ -25,7 +25,7 @@ class ThreadEven extends Thread {
 	public void run() {
 		while (sharedObject.counter < sharedObject.max) {
 			synchronized (sharedObject) {
-				while (sharedObject.status.equals("Odd")) {
+				while (sharedObject.state.equals("Odd")) {
 					try {
 						sharedObject.wait();
 					} catch (InterruptedException e) {
@@ -37,7 +37,7 @@ class ThreadEven extends Thread {
 					System.out.println(sharedObject.counter + " printed by " + Thread.currentThread().getName());
 				}
 				sharedObject.counter++;
-				sharedObject.status = "Odd";
+				sharedObject.state = "Odd";
 				sharedObject.notifyAll();
 
 			}
@@ -58,7 +58,7 @@ class ThreadOdd extends Thread {
 	public void run() {
 		while (sharedObject.counter < sharedObject.max) {
 			synchronized (sharedObject) {
-				while (sharedObject.status.equals("Even")) {
+				while (sharedObject.state.equals("Even")) {
 					try {
 						sharedObject.wait();
 					} catch (InterruptedException e) {
@@ -70,7 +70,7 @@ class ThreadOdd extends Thread {
 					System.out.println(sharedObject.counter + " printed by " + Thread.currentThread().getName());
 				}
 				sharedObject.counter++;
-				sharedObject.status = "Even";
+				sharedObject.state = "Even";
 				sharedObject.notifyAll();
 			}
 		}
