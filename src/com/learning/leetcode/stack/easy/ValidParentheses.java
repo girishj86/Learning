@@ -1,4 +1,4 @@
-package com.learning.leetcode.easy.stack;
+package com.learning.leetcode.stack.easy;
 
 import java.util.HashMap;
 import java.util.Map;

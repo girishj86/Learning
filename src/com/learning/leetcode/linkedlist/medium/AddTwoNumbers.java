@@ -1,4 +1,4 @@
-package com.learning.leetcode.medium.linkedlist;
+package com.learning.leetcode.linkedlist.medium;
 
 import com.learning.leetcode.common.ListNode;
 

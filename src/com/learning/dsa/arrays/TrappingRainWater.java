@@ -14,12 +14,12 @@ public class TrappingRainWater {
         int[] left = new int[n];
         int[] right = new int[n];
         for(int i=0;i<n;i++){
-            left[i] = max(leftMax,blocks[i]);
-            leftMax = left[i];
+        	leftMax = max(leftMax,blocks[i]);
+            left[i] = leftMax;
         }
         for(int i=n-1;i>=0;i--){
-            right[i] = max(rightMax,blocks[i]);
-            rightMax = right[i];
+        	rightMax = max(rightMax,blocks[i]);
+            right[i] = rightMax;
         }
         int maxWater = 0;
         for(int i=0;i<n;i++){
