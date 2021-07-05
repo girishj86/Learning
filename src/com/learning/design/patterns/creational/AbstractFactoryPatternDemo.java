@@ -1,5 +1,6 @@
 package com.learning.design.patterns.creational;
 
+import java.text.NumberFormat;
 import java.util.Calendar;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -23,6 +24,7 @@ public class AbstractFactoryPatternDemo {
 		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 		
 		Calendar calendar = Calendar.getInstance();
+		NumberFormat numberFormat = NumberFormat.getInstance();
 		
 	}
 }

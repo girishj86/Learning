@@ -1,4 +1,4 @@
-package com.learning.design.patterns;
+package com.learning.design.patterns.behavioral;
 
 public class CommandPatternDemo {
 
@@ -11,6 +11,7 @@ public class CommandPatternDemo {
         menuActions.saveDocument();
 
         Order order = new Order();
+        //actions like place, server, cook are encapsulated as objects
         PlaceOrder placeOrder = new PlaceOrder(order);
         PrepareOrder prepareOrder = new PrepareOrder(order);
         ServeOrder serveOrder = new ServeOrder(order);
@@ -32,10 +33,12 @@ class Waiter {
         this.serveOrder = serveOrder;
     }
     public void placeOrder(){
+    	System.out.println("Waiter is placing the order now");
         this.placeOrder.execute();
     }
 
     public void serveOrder(){
+    	System.out.println("Waiter is serving the order now");
         this.serveOrder.execute();
     }
 }
@@ -46,6 +49,7 @@ class Cook {
         this.prepareOrder = prepareOrder;
     }
     public void prepareOrder(){
+    	System.out.println("Cook started cooking now");
         this.prepareOrder.execute();
     }
 }
@@ -77,7 +81,7 @@ class PrepareOrder implements  Command {
 }
 
 class ServeOrder implements  Command {
-    Order order;
+   Order order;
 
     ServeOrder(Order order){
         this.order = order;
@@ -114,10 +118,12 @@ class MenuActions {
     }
 
     public void openDocument(){
+    	System.out.println("Menu Action Open Document is called now");
         openDoc.execute();
     }
 
     public void saveDocument(){
+    	System.out.println("Menu Action Save Document is called now");
         saveDoc.execute();
     }
 }

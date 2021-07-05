@@ -10,6 +10,10 @@ public class BuilderDemo {
 				.address("bengaluru")
 				.build();
 		System.out.println(user);
+		
+		//java examples
+		StringBuilder stringBuilder =  new StringBuilder();
+		// all instances of java.lang.Appendable interface
 
 	}
 
