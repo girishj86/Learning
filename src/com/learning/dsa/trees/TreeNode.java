@@ -2,10 +2,10 @@ package com.learning.dsa.trees;
 
 public class TreeNode {
 
-	int data;
-	TreeNode left, right;
+	public int data;
+	public TreeNode left, right;
 
-	TreeNode(int data) {
+	public TreeNode(int data) {
 		this.data = data;
 		left = null;
 		right = null;
@@ -13,9 +13,6 @@ public class TreeNode {
 
 	@Override
 	public String toString() {
-		return data+" ";
+		return data + " ";
 	}
-	
-	
-
 }

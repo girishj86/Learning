@@ -1,4 +1,4 @@
-package com.learning.leetcode.strings.easy;
+package com.learning.dsa.strings;
 
 import java.util.HashMap;
 import java.util.Map;

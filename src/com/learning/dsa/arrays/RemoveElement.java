@@ -1,4 +1,4 @@
-package com.learning.leetcode.arrays.easy;
+package com.learning.dsa.arrays;
 
 public class RemoveElement {
 

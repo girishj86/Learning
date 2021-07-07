@@ -1,4 +1,4 @@
-package com.learning.leetcode.integer.easy;
+package com.learning.dsa.numbers;
 
 public class PalindromeIntegerSolution {
     public static void main(String[] args) {
