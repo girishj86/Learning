@@ -1,9 +1,11 @@
-package com.learning.dsa.trees;
+package com.learning.dsa.trees.bt;
 
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
 import java.util.Stack;
+
+import com.learning.dsa.trees.TreeNode;
 
 public class BinaryTree {
 
@@ -13,7 +15,10 @@ public class BinaryTree {
 		this.root = new TreeNode(data);
 	}
 
-	void levelOrderInsertArray(int[] elements) {
+	public BinaryTree() {
+	}
+
+	void createBinaryTree(int[] elements) {
 		for (int el : elements) {
 			levelOrderInsert(el);
 		}
@@ -21,6 +26,10 @@ public class BinaryTree {
 
 	/* Function to insert data recursively */
 	void levelOrderInsert(int data) {
+		if (root == null) {
+			root = new TreeNode(data);
+			return;
+		}
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
 		queue.add(root);
 		while (true) {
@@ -65,7 +74,8 @@ public class BinaryTree {
 		}
 	}
 
-	void levelOrderTraversal(TreeNode root) {
+	static void levelOrderTraversal(TreeNode root) {
+		System.out.println("Level Order Traversal");
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
 		queue.offer(root);
 		int level = 0;
@@ -85,56 +95,33 @@ public class BinaryTree {
 		}
 	}
 
-	void zigZagLevelOrderTraversal(TreeNode root) {
-		Stack<TreeNode> stack = new Stack<TreeNode>();
-		Queue<TreeNode> queue = new LinkedList<TreeNode>();
-		queue.offer(root);
-		int level = 0;
-		while (!queue.isEmpty()) {
-			int size = queue.size();
-			if (queue.stream().filter(Objects::nonNull).count() > 0) {
-				System.out.print("\nLevel " + level + " :");
+	public void inorderIterative(TreeNode root) {
+		Stack<TreeNode> stack = new Stack();
+		TreeNode curr = root;
+		while (!stack.empty() || curr != null) {
+			if (curr != null) {
+				stack.push(curr);
+				curr = curr.left;
+			} else {
+				curr = stack.pop();
+				System.out.print(curr.data + " ");
+
+				curr = curr.right;
 			}
-			for (int i = 0; i < size; i++) {
-				TreeNode node = queue.poll();
-				if (level % 2 == 1) {
-					stack.add(node);
-				}
-				if (node != null) {
-					if (level % 2 == 0) {
-						System.out.print(node.data + " ");
-					}
-					queue.offer(node.left);
-					queue.offer(node.right);
-				}
-			}
-			if (level % 2 == 1) {
-				while(!stack.isEmpty()) {
-					System.out.print(stack.pop()+" ");
-				}
-				stack.clear();
-			}
-			level++;
 		}
 	}
 
-	/* Function to check if 2 trees are identical */
-	boolean checkIdenticalTree(TreeNode root1, TreeNode root2) {
-		if (root1 == null && root2 != null) {
-			return false;
-		}
-		if (root2 == null && root1 != null) {
-			return false;
-		}
-		if (root1 == null && root2 == null) {
-			return true;
-		}
-		if (root1.data == root2.data) {
-			return checkIdenticalTree(root1.left, root2.left) && checkIdenticalTree(root1.right, root2.right);
-		}
-		return false;
+	static int height(TreeNode node) {
+		if (node == null)
+			return 0;
+		return (1 + Math.max(height(node.left), height(node.right)));
 	}
 	
 	
-
+	public static void main(String[] args) {
+		BinaryTree tree = new BinaryTree();
+		tree.createBinaryTree(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 });
+		System.out.println(BinaryTree.height(tree.root));
+		tree.inorderIterative(tree.root);
+	}
 }

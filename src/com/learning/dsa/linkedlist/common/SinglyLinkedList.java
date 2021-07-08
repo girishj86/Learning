@@ -2,9 +2,9 @@ package com.learning.dsa.linkedlist.common;
 
 public class SinglyLinkedList {
 	
-	public static SingleListNode head;
+	public SingleListNode head;
 	
-	public static void createSinglyLinkedList(int[] array) {
+	public void createSinglyLinkedList(int[] array) {
 		SingleListNode temp = null;
 		for(int num:array) {
 			if(head == null) {
@@ -17,7 +17,8 @@ public class SinglyLinkedList {
 		}
 	}
 	
-	public static void print() {
+	public static void print(SingleListNode head) {
+		System.out.println();
 		SingleListNode temp = head;
 		while (temp != null) {
 			System.out.print(temp.data+" --> ");

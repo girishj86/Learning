@@ -17,8 +17,7 @@ public class FindLoop {
 		SingleListNode tail = new SingleListNode(8);
 		head.next.next.next.next.next.next.next = tail;
 		tail.next = loopNode;
-		SinglyLinkedList.head = head;
-		// SinglyLinkedList.print();
+		//SinglyLinkedList.print(head);
 		System.out.println(findLoop(head).data);
 	}
 

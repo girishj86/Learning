@@ -6,9 +6,10 @@ import com.learning.dsa.linkedlist.common.SinglyLinkedList;
 public class RemoveDuplicatesSortedList {
 
 	public static void main(String[] args) {
-		SinglyLinkedList.createSinglyLinkedList(new int[] { 1, 1, 3, 4, 4, 4, 5, 6, 6, 6, 6,7 });
-		SinglyLinkedList.head = removeDuplicatesSortedList(SinglyLinkedList.head);
-		SinglyLinkedList.print();
+		SinglyLinkedList sll = new SinglyLinkedList();
+		sll.createSinglyLinkedList(new int[] { 1, 1, 3, 4, 4, 4, 5, 6, 6, 6, 6,7 });
+		SingleListNode head = removeDuplicatesSortedList(sll.head);
+		SinglyLinkedList.print(head);
 	}
 
 	public static SingleListNode removeDuplicatesSortedList(SingleListNode head) {

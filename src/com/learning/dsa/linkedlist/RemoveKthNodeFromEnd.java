@@ -6,9 +6,10 @@ import com.learning.dsa.linkedlist.common.SinglyLinkedList;
 public class RemoveKthNodeFromEnd {
 
 	public static void main(String[] args) {
-		SinglyLinkedList.createSinglyLinkedList(new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 });
-		SinglyLinkedList.head = removeKthNodeFromEnd(SinglyLinkedList.head, 10);
-		SinglyLinkedList.print();
+		SinglyLinkedList sll = new SinglyLinkedList();
+		sll.createSinglyLinkedList(new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 });
+		SingleListNode head = removeKthNodeFromEnd(sll.head, 2);
+		SinglyLinkedList.print(head);
 	}
 
 	public static SingleListNode removeKthNodeFromEnd(SingleListNode head, int k) {
