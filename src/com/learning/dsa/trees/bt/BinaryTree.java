@@ -78,21 +78,25 @@ public class BinaryTree {
 		System.out.println("Level Order Traversal");
 		Queue<TreeNode> queue = new LinkedList<TreeNode>();
 		queue.offer(root);
-		int level = 0;
+		int level = 1;
 		while (!queue.isEmpty()) {
+			System.out.print("\nLevel "+level+" : ");
 			int size = queue.size();
-			if (queue.stream().filter(Objects::nonNull).count() > 0) {
-				System.out.print("\nLevel " + level++ + " :");
-			}
 			for (int i = 0; i < size; i++) {
 				TreeNode node = queue.poll();
 				if (node != null) {
 					System.out.print(node.data + " ");
-					queue.offer(node.left);
-					queue.offer(node.right);
+					if (node.left != null) {
+						queue.offer(node.left);
+					}
+					if (node.right != null) {
+						queue.offer(node.right);
+					}
 				}
 			}
+			level++;
 		}
+		System.out.println();
 	}
 
 	public void inorderIterative(TreeNode root) {
@@ -116,8 +120,7 @@ public class BinaryTree {
 			return 0;
 		return (1 + Math.max(height(node.left), height(node.right)));
 	}
-	
-	
+
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
 		tree.createBinaryTree(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 });

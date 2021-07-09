@@ -3,33 +3,43 @@ package com.learning.dsa.trees.bt;
 import java.util.LinkedList;
 import com.learning.dsa.trees.TreeNode;
 
-public class ZigZagLevelOrderTraversal {
+public class InvertTree {
 
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
-		tree.createBinaryTree(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 });
+		tree.createBinaryTree(new int[] { 1, 2, 3, 4, 5, 6, 7 });
 		BinaryTree.levelOrderTraversal(tree.root);
-		zigZagLevelOrderTraversal(tree.root);
+		invert(tree.root);
+		BinaryTree.levelOrderTraversal(tree.root);
+		levelOrderInvert(tree.root);
+		BinaryTree.levelOrderTraversal(tree.root);
 
 	}
 
-	static void zigZagLevelOrderTraversal(TreeNode root) {
+	static void invert(TreeNode node) {
+		if (node == null) {
+			return;
+		}
+
+		TreeNode temp = node.left;
+		node.left = node.right;
+		node.right = temp;
+
+		invert(node.left);
+		invert(node.right);
+	}
+
+	static void levelOrderInvert(TreeNode root) {
 		LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
 		queue.offer(root);
-		int level = 1;
 		while (!queue.isEmpty()) {
 			int size = queue.size();
-			if (level % 2 == 0) {
-				for (int i = queue.size() - 1; i >= 0; i--) {
-					System.out.print(queue.get(i).data + " ");
-				}
-			}
 			for (int i = 0; i < size; i++) {
 				TreeNode node = queue.poll();
+				TreeNode temp = node.left;
+				node.left = node.right;
+				node.right = temp;
 				if (node != null) {
-					if (level % 2 == 1) {
-						System.out.print(node.data + " ");
-					}
 					if (node.left != null) {
 						queue.offer(node.left);
 					}
@@ -38,9 +48,6 @@ public class ZigZagLevelOrderTraversal {
 					}
 				}
 			}
-			level++;
-			System.out.println();
 		}
 	}
-
 }
