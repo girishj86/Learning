@@ -2,7 +2,8 @@ package com.learning.dsa.trees.bt;
 
 import com.learning.dsa.trees.TreeNode;
 
-public class LCA {
+public class
+LCA {
 
 	public static void main(String[] args) {
 		BinaryTree tree = new BinaryTree();
