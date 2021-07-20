@@ -24,9 +24,9 @@ public class RomanIntegerSolution {
 
         for (int i = length - 2; i >= 0; i--) {
             if (romanValues.get(s.charAt(i)) >= romanValues.get(s.charAt(i + 1))) {
-                result += romanValues.get(s.charAt(i));
+                result = result + romanValues.get(s.charAt(i));
             } else {
-                result -= romanValues.get(s.charAt(i));
+                result = result - romanValues.get(s.charAt(i));
             }
         }
         return result;
