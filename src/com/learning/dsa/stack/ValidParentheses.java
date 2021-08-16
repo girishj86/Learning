@@ -1,8 +1,10 @@
 package com.learning.dsa.stack;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Stack;
+
 
 public class ValidParentheses {
 
@@ -11,7 +13,7 @@ public class ValidParentheses {
     }
 
     public static boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new ArrayDeque<>();
         Map<Character, Character> symbolsMap = new HashMap<>();
         symbolsMap.put(')', '(');
         symbolsMap.put('}', '{');
