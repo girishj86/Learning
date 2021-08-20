@@ -16,7 +16,7 @@ public class OddEvenThreadsUsingLock {
         Thread evenThread = new Thread() {
             @Override
             public void run() {
-                while (sharedObject.counter < sharedObject.max) {
+                while (sharedObject.counter < sharedObject.max)     {
                     try {
                         lock.lock();
                         while (sharedObject.state.equals("Odd")) {

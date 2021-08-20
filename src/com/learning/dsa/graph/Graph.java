@@ -54,7 +54,7 @@ public class Graph {
 
     public void depthFirstSearch(int root) {
         System.out.println("Depth First Search");
-        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> stack = new ArrayDeque<>();
         Map<Integer, Boolean> visited = new HashMap<>();
         stack.push(root);
         while (!stack.isEmpty()) {
