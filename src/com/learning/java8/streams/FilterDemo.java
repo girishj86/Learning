@@ -9,8 +9,8 @@ public class FilterDemo {
 		String[] arrayStream = {"Ajay","Akshay","Hrithik"};
 		Stream<String> stringStream = Stream.of(arrayStream);
 		stringStream
-			//.filter(new MyPredicate())
-			.filter(x -> x.startsWith("A"))
+			.filter(new MyPredicate())
+			//.filter(x -> x.startsWith("A"))
 			.peek(System.out::println)
 			.count();
 	}

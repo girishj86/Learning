@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SortedSquaredArray {
 
 	public static void main(String[] args) {
-		int[] array = { -10, -5, 0, 5, 10 };
+		int[] array = { -9, -6, 0, 5, 10 };
 		System.out.println(Arrays.toString(sortedSquaredArray(array)));
 	}
 

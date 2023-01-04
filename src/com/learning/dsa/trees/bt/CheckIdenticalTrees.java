@@ -8,7 +8,7 @@ public class CheckIdenticalTrees {
 		BinaryTree tree1 = new BinaryTree();
 		tree1.createBinaryTree(new int[] {1,2,3,4,5,6,7,8,9});
 		BinaryTree tree2 = new BinaryTree();
-		tree2.createBinaryTree(new int[] {1,2,3,4,5,6,7,8,9,10});
+		tree2.createBinaryTree(new int[] {1,2,3,4,5,6,7,8,9});
 		System.out.println(checkIdenticalTree(tree1.root, tree2.root));
 	}
 	
@@ -23,10 +23,9 @@ public class CheckIdenticalTrees {
 		if (root1 == null && root2 == null) {
 			return true;
 		}
-		if (root1.data == root2.data) {
-			return checkIdenticalTree(root1.left, root2.left) && checkIdenticalTree(root1.right, root2.right);
-		}
-		return false;
+
+		return (root1.data == root2.data) && checkIdenticalTree(root1.left, root2.left) && checkIdenticalTree(root1.right, root2.right);
+
 	}
 
 }

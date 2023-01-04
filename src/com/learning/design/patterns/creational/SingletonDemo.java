@@ -1,9 +1,20 @@
 package com.learning.design.patterns.creational;
 
 import java.io.Serializable;
+import java.util.Random;
 
 public class SingletonDemo {
 	public static void main(String[] args) {
+		while(true) {
+			EnumSingleton enumSingleton = EnumSingleton.INSTANCE;
+			enumSingleton.printId();
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		/*
 		EagerlyInitializedSingleton eagerlyInitializedSingleton = EagerlyInitializedSingleton.getInstance();
 		LazilyInitializedSingleton lazilyInitializedSingleton = LazilyInitializedSingleton.getInstance();
 		StaticClassSingleton staticClassSingleton = StaticClassSingleton.getInstance();
@@ -13,7 +24,7 @@ public class SingletonDemo {
 		
 		//java examples
 		Runtime runtime = Runtime.getRuntime();
-		System.getSecurityManager();
+		System.getSecurityManager();*/
 	}
 }
 
@@ -22,8 +33,10 @@ class EagerlyInitializedSingleton {
 	//Eagerly initialized
 	private static EagerlyInitializedSingleton singleton = new EagerlyInitializedSingleton();
 
-	private EagerlyInitializedSingleton() {
+	public int id;
 
+	private EagerlyInitializedSingleton() {
+		this.id = new Random().nextInt(1000);
 	}
 
 	static EagerlyInitializedSingleton getInstance() {
@@ -85,7 +98,12 @@ class StaticClassSingleton implements Serializable {
 // thread safe
 enum EnumSingleton {
 	INSTANCE;
-	
+
+	int id = new Random().nextInt(1000);
+
+	public void printId(){
+		System.out.println(id);
+	}
 	public void otherMethods() {
 		System.out.println("Singleton created using ENUM");
 	}
