@@ -1,4 +1,4 @@
-package com.learning.dsa.arrays;
+package com.learning.dsa.searching;
 
 import java.util.Arrays;
 
