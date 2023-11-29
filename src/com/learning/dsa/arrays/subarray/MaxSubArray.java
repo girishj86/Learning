@@ -6,6 +6,7 @@ public class MaxSubArray {
            Find the contiguous sub-array(containing at least one number)
            which has the maximum sum and return its sum */
         System.out.println(maxSubArray(new int[]{-2, -3, 4, -1, -2, 1, 5, -3}));
+        System.out.println(maxSubArrayBF(new int[]{-9, -5, 3,4,7,-8}));
     }
 
     public static int maxSubArray(int[] a) {
@@ -24,6 +25,23 @@ public class MaxSubArray {
             }
         }
         System.out.println(start + " " + end);
+        return max;
+    }
+
+    public static int maxSubArrayBF(int[] a) {
+        int max = Integer.MIN_VALUE, start = -1, end = -1;
+        for (int i = 0; i < a.length; i++) {
+            int curSum = 0;
+            for (int j = i; j < a.length; j++) {
+                curSum = curSum + a[j];
+                if (max < curSum) {
+                    max = curSum;
+                    start = i;
+                    end = j;
+                }
+            }
+        }
+        System.out.println(start+" "+end);
         return max;
     }
 }

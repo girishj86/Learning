@@ -1,4 +1,4 @@
-package com.learning.dsa.arrays;
+package com.learning.dsa.arrays.sliding.window;
 
 public class SellAndBuyStock {
     public static void main(String[] args) {

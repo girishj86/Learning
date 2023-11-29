@@ -26,32 +26,47 @@ public class Merge2SortedLists {
     }
 
     public static ListNode mergeTwoSortedLists(ListNode head1, ListNode head2){
-        ListNode p1 = head1, p2 = head2, m = null;
+        ListNode p1 = head1, p2 = head2, m = null, next = null, mHead = null;
         while(p1 != null && p2 != null){
             if(p1.val < p2.val){
-                if(m==null){
-                    m = new ListNode(p1.val);
-                    continue;
+                if(mHead==null){
+                    mHead = new ListNode(p1.val);
+                    m = mHead;
                 } else {
-                    m.next = new ListNode(p1.val);
+                    next = new ListNode(p1.val);
+                    m.next = next;
+                    m = next;
                 }
                 p1 = p1.next;
             } else {
-                if(m==null){
-                    m = new ListNode(p2.val);
-                    continue;
+                if(mHead==null){
+                    mHead = new ListNode(p2.val);
+                    m = mHead;
                 } else {
-                    m.next = new ListNode(p2.val);
+                    next = new ListNode(p2.val);
+                    m.next = next;
+                    m = next;
                 }
                 p2 = p2.next;
             }
         }
+
         if(p1==null && p2!=null){
-            m.next = new ListNode(p2.val);
+            while(p2!=null) {
+                next = new ListNode(p2.val);
+                p2 = p2.next;
+                m.next = next;
+                m = next;
+            }
         }
         if(p2==null && p1!=null){
-            m.next = new ListNode(p1.val);
+            while(p1!=null) {
+                next = new ListNode(p1.val);
+                p1 = p1.next;
+                m.next = next;
+                m = next;
+            }
         }
-        return m;
+        return mHead;
     }
 }
